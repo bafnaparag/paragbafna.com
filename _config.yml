@@ -1,3 +1,8 @@
+minimal_mistakes_skin    : "dark"
+
+# Site Settings
+locale                   : "en-US"
+
 title: "Parag Bafna"
 description: "Expert in Developing Mobile and Desktop Applications"
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -15,11 +20,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-
-# Include the portfolio and contact in navigation
+# Navigation
 header:
   nav:
     - text: "Home"
@@ -36,7 +37,10 @@ footer:
     - text: "Support Email"
       url: "mailto:support@paragbafna.com"
     - text: "Office Address: 132 Gopal Nagar, Sagod Road, Ratlam - 457001, Madhya Pradesh, India"
-      url: "#"
-assets:
-  css:
-    - /assets/css/custom.css
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+include:
+  - _pages
