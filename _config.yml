@@ -11,20 +11,7 @@ name                     : "Parag Bafna"
 description              : "Specializing in developing high-quality mobile applications for iOS and desktop applications for macOS."
 url                      : "https://paragbafna.com"
 baseurl                  : "" # GitHub Pages will handle the base URL
-logo                     : "/assets/images/apple-touch-icon.png"
 masthead_title           : "Parag Bafna"
-
-# Navigation settings
-header:
-  nav:
-    - text: "Home"
-      url: "/"
-    - text: "Expertise"
-      url: "/expertise/"
-    - text: "Portfolio"
-      url: "/portfolio/"
-    - text: "Contact"
-      url: "/contact/"
 
 footer:
   links:
@@ -39,44 +26,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
 
-# Social Sharing
-twitter:
-  username               : "paragbafna"
-facebook:
-  username               : "paragbafna"
-og_image                 : "/assets/images/og-image.jpg"
-social:
-  type                   : "Person"
-  name                   : "Parag Bafna"
-  links:
-    - "https://twitter.com/paragbafna"
-    - "https://github.com/paragbafna"
-
-# Analytics
-analytics:
-  provider               : "google"
-  google:
-    tracking_id          : "UA-XXXXXXXXX-X"
 
 # Site Author
 author:
   name             : "Parag Bafna"
-  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "Expert in developing high-quality mobile and desktop applications."
   location         : "Ratlam, Madhya Pradesh, India"
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://paragbafna.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/paragbafna"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/paragbafna"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/paragbafna"
 
 # Reading Files
 include:
