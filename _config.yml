@@ -6,7 +6,7 @@ locale                   : "en-US"
 title: "Parag Bafna"
 description: "Expert in Developing Mobile and Desktop Applications"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://paragbafna.github.io" # the base hostname & protocol for your site
+url: "https://paragbafna.com" # the base hostname & protocol for your site
 
 # Remote theme settings
 remote_theme: mmistakes/minimal-mistakes
