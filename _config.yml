@@ -6,8 +6,6 @@ minimal_mistakes_skin    : "dark" # Switching to a dark theme for a more profess
 locale                   : "en-US"
 title                    : "Parag Bafna"
 title_separator          : "-"
-subtitle                 : "Expert in Developing Mobile and Desktop Applications"
-name                     : "Parag Bafna"
 description              : "Specializing in developing high-quality mobile applications for iOS and desktop applications for macOS."
 url                      : "https://paragbafna.com"
 baseurl                  : "" # GitHub Pages will handle the base URL
@@ -20,10 +18,20 @@ footer:
     - text: "Office Address"
       url: "https://maps.google.com/?q=132 Gopal Nagar, Sagod Road, Ratlam - 457001, Madhya Pradesh, India"
 
-# Plugins
+# Plugins (previously gems:)
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-include-cache
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
   - jekyll-include-cache
 
 
@@ -45,6 +53,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Markdown Processing
 markdown: kramdown
