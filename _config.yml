@@ -1,0 +1,40 @@
+title: "Parag Bafna"
+description: "Expert in Developing Mobile and Desktop Applications"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://paragbafna.github.io" # the base hostname & protocol for your site
+
+theme: minimal-mistakes-jekyll
+
+# Social Links
+email: support@paragbafna.com
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Include the portfolio and contact in navigation
+header:
+  nav:
+    - text: "Home"
+      url: "/"
+    - text: "Expertise"
+      url: "/expertise/"
+    - text: "Portfolio"
+      url: "/portfolio/"
+    - text: "Contact"
+      url: "/contact/"
+
+footer:
+  links:
+    - text: "Support Email"
+      url: "mailto:support@paragbafna.com"
+    - text: "Office Address: 132 Gopal Nagar, Sagod Road, Ratlam - 457001, Madhya Pradesh, India"
+      url: "#"
+assets:
+  css:
+    - /assets/css/custom.css
