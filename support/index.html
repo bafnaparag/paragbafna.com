@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - ParagBafna Apps</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .support-header {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .support-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .support-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .support-options {
+            padding: 80px 0;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .support-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .support-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .card-body p {
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-bg);
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: "+";
+            font-size: 1.5rem;
+        }
+        
+        .faq-question.active:after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .app-specific-support {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .app-support-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .app-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .app-card-header {
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .app-card-header h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .app-card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .app-card-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .app-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .app-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #ecf0f1;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .support-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">Parag<span>Bafna</span> Apps</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#status">App Status</a></li>
+                    <li><a href="/#docs">Documentation</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="support-header">
+        <div class="container">
+            <h1>How Can We Help You?</h1>
+            <p>Get support for all ParagBafna Apps products and services. We're here to help you get the most out of our applications.</p>
+        </div>
+    </section>
+
+    <section class="support-options">
+        <div class="container">
+            <h2 class="section-title">Support Options</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="card-header">
+                        <h3>Email Support</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="support-icon">📧</div>
+                        <p>Contact our support team directly for personalized assistance with any issues or questions.</p>
+                        <a href="mailto:support@paragbafna.com" class="btn">Email Us</a>
+                    </div>
+                </div>
+                
+                <div class="support-card">
+                    <div class="card-header">
+                        <h3>Documentation</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="support-icon">📚</div>
+                        <p>Browse our comprehensive documentation, user guides, and tutorials for all our applications.</p>
+                        <a href="#" class="btn">View Docs</a>
+                    </div>
+                </div>
+                
+                <div class="support-card">
+                    <div class="card-header">
+                        <h3>Frequently Asked Questions</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="support-icon">❓</div>
+                        <p>Find quick answers to common questions about our applications and services.</p>
+                        <a href="#faq" class="btn">View FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="form-container">
+                <form action="mailto:support@paragbafna.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="app">App</label>
+                        <select id="app" name="app">
+                            <option value="unwind">Unwind</option>
+                            <option value="focustime">FocusTime</option>
+                            <option value="noteflow">NoteFlow</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How do I download and install Unwind?</div>
+                    <div class="faq-answer">
+                        <p>Unwind can be downloaded from our website or the macOS App Store. After downloading, simply open the .dmg file and drag the Unwind icon to your Applications folder. Double-click to launch, and you'll be guided through the initial setup process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I customize my break schedule in Unwind?</div>
+                    <div class="faq-answer">
+                        <p>Yes, Unwind offers highly customizable break schedules. You can set up:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Normal breaks (typically 10 minutes every hour)</li>
+                            <li>Micro breaks (short 15-second breaks for eye relief)</li>
+                            <li>Custom breaks with your own timing and frequency</li>
+                        </ul>
+                        <p style="margin-top: 10px;">All of these settings can be adjusted in the Preferences panel, accessible from the menu bar icon.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does Unwind detect when I'm away from my computer?</div>
+                    <div class="faq-answer">
+                        <p>Unwind uses macOS's built-in idle detection to recognize when you're not actively using your computer. When you step away, Unwind automatically counts this time toward your break time, ensuring you don't get unnecessary break reminders when you return.</p>
+                        <p>The sensitivity of idle detection can be adjusted in the Preferences panel under the "Natural Breaks" tab.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I create my own break themes?</div>
+                    <div class="faq-answer">
+                        <p>Yes! Unwind supports custom themes using HTML, CSS, and JavaScript. You can create your own themes by:</p>
+                        <ol style="margin-left: 20px; margin-top: 10px;">
+                            <li>Opening the Themes folder (accessible from Preferences > Themes > Open Themes Folder)</li>
+                            <li>Creating a new folder with your theme name</li>
+                            <li>Adding an index.html file and any assets your theme needs</li>
+                        </ol>
+                        <p style="margin-top: 10px;">Your theme will automatically appear in the themes list after you create it. For detailed instructions and examples, check our theme documentation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How can I get Unwind to automatically start when I log in?</div>
+                    <div class="faq-answer">
+                        <p>Unwind can be set to automatically start when you log in to your Mac. To enable this feature:</p>
+                        <ol style="margin-left: 20px; margin-top: 10px;">
+                            <li>Open Unwind's Preferences</li>
+                            <li>Go to the "General" tab</li>
+                            <li>Check the box labeled "Start Unwind at login"</li>
+                        </ol>
+                        <p style="margin-top: 10px;">This will add Unwind to your system login items, ensuring it's always running when you need it.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is my activity data sent to any servers?</div>
+                    <div class="faq-answer">
+                        <p>No. All activity data collected by Unwind is stored locally on your device. We do not transmit your usage data to any external servers. Your privacy is important to us, and we designed Unwind to keep your data under your control.</p>
+                        <p>If you wish to clear your activity data at any time, you can do so from Preferences > Privacy > Clear Activity Data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-specific-support">
+        <div class="container">
+            <h2 class="section-title">App-Specific Support</h2>
+            <div class="app-support-cards">
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <h3>Unwind</h3>
+                        <span>Break Reminder for macOS</span>
+                    </div>
+                    <div class="app-card-body">
+                        <p>Get help with setting up break schedules, creating custom themes, configuring AppleScript actions, and tracking your activity statistics.</p>
+                    </div>
+                    <div class="app-card-footer">
+                        <a href="/apps/unwind" class="app-link">App Page</a>
+                        <a href="#" class="app-link">Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <h3>FocusTime</h3>
+                        <span>Productivity Timer</span>
+                    </div>
+                    <div class="app-card-body">
+                        <p>Learn how to use the Pomodoro technique effectively, customize your work/break intervals, and integrate with task management systems.</p>
+                    </div>
+                    <div class="app-card-footer">
+                        <a href="/apps/focustime" class="app-link">App Page</a>
+                        <a href="#" class="app-link">Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <h3>NoteFlow</h3>
+                        <span>Minimalist Note-Taking</span>
+                    </div>
+                    <div class="app-card-body">
+                        <p>Discover how to organize your notes efficiently, use markdown formatting, set up synchronization, and customize your note-taking experience.</p>
+                    </div>
+                    <div class="app-card-footer">
+                        <a href="/apps/noteflow" class="app-link">App Page</a>
+                        <a href="#" class="app-link">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Apps</h4>
+                    <ul class="footer-links">
+                        <li><a href="/apps/unwind">Unwind</a></li>
+                        <li><a href="/apps/focustime">FocusTime</a></li>
+                        <li><a href="/apps/noteflow">NoteFlow</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/cookies">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact-form">Contact Us</a></li>
+                        <li><a href="mailto:support@paragbafna.com">Email Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ParagBafna Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                
+                question.classList.toggle('active');
+                answer.classList.toggle('show');
+                
+                // Close other open FAQ items
+                questions.forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
