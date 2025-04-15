@@ -3,29 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parag Bafna</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ParagBafna Apps</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .app-status {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .status-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .status-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .card-header h3 {
+            margin-bottom: 5px;
+        }
+
+        .version {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .status-dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-operational {
+            background-color: #2ecc71;
+        }
+
+        .status-maintenance {
+            background-color: #f39c12;
+        }
+
+        .status-issue {
+            background-color: #e74c3c;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body p {
+            margin-bottom: 15px;
+        }
+
+        .card-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .card-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .docs-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .docs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .doc-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doc-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .doc-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .privacy-policy {
+            background-color: #e3f2fd;
+        }
+
+        .terms-of-service {
+            background-color: #f1f8e9;
+        }
+
+        .support {
+            background-color: #fff3e0;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #ecf0f1;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Parag Bafna</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="expertise.html">Expertise</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Parag<span>Bafna</span> Apps</a>
+                <ul class="nav-links">
+                    <li><a href="#status">App Status</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>Welcome to Parag Bafna</h2>
-            <p>Specializing in developing high-quality mobile applications for iOS and desktop applications for macOS. Our team is dedicated to creating user-friendly and efficient software solutions tailored to meet the needs of our clients.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Parag Bafna. All rights reserved.</p>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to ParagBafna Apps</h1>
+            <p>Discover our collection of innovative macOS and iOS applications designed to enhance your productivity and digital experience.</p>
+            <a href="#status" class="btn">Check App Status</a>
+        </div>
+    </section>
+
+    <section id="status" class="app-status">
+        <div class="container">
+            <h2 class="section-title">Application Status</h2>
+            <div class="status-cards">
+                <div class="status-card">
+                    <div class="card-header">
+                        <h3>Unwind</h3>
+                        <div class="version">v1.2.3</div>
+                        <div class="status-indicator">
+                            <div class="status-dot status-operational"></div>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Unwind helps you relax and destress with guided meditations and breathing exercises.</p>
+                        <p>Last updated: April 12, 2025</p>
+                        <div class="card-links">
+                            <a href="/apps/unwind/privacy.html" class="card-link">Privacy Policy</a>
+                            <a href="/apps/unwind/terms.html" class="card-link">Terms of Use</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <div class="card-header">
+                        <h3>FocusTime</h3>
+                        <div class="version">v2.0.1</div>
+                        <div class="status-indicator">
+                            <div class="status-dot status-maintenance"></div>
+                            <span>Maintenance</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>FocusTime helps you stay productive with customizable Pomodoro timers and distraction blocking.</p>
+                        <p>Last updated: April 5, 2025</p>
+                        <div class="card-links">
+                            <a href="/focustime/privacy-policy" class="card-link">Privacy Policy</a>
+                            <a href="/focustime/terms" class="card-link">Terms of Use</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <div class="card-header">
+                        <h3>NoteFlow</h3>
+                        <div class="version">v1.0.5</div>
+                        <div class="status-indicator">
+                            <div class="status-dot status-operational"></div>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>NoteFlow is a minimalist note-taking app designed for speed and simplicity.</p>
+                        <p>Last updated: March 28, 2025</p>
+                        <div class="card-links">
+                            <a href="/noteflow/privacy-policy" class="card-link">Privacy Policy</a>
+                            <a href="/noteflow/terms" class="card-link">Terms of Use</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <h2 class="section-title">Documentation & Policies</h2>
+            <div class="docs-container">
+                <div class="doc-card privacy-policy">
+                    <h3>Privacy Policies</h3>
+                    <p>Learn how we protect your data and respect your privacy across all our applications.</p>
+                    <a href="/privacy/index.html" class="btn">View All Policies</a>
+                </div>
+
+                <div class="doc-card terms-of-service">
+                    <h3>Terms of Use</h3>
+                    <p>Review the terms and conditions that govern the use of our applications.</p>
+                    <a href="/terms/index.html" class="btn">View Terms</a>
+                </div>
+
+                <div class="doc-card support">
+                    <h3>Support</h3>
+                    <p>Need help with one of our applications? Our support team is ready to assist.</p>
+                    <a href="/support" class="btn">Get Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="app-status">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                    ParagBafna Apps is dedicated to creating high-quality, intuitive applications for macOS and iOS.
+                    Our mission is to develop tools that enhance productivity, creativity, and digital wellbeing.
+                </p>
+                <p style="font-size: 1.1rem;">
+                    Founded in 2023, we're a small team of passionate developers who believe in crafting software
+                    that respects user privacy while delivering exceptional functionality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/status">System Status</a></li>
+                        <li><a href="/report-bug">Report a Bug</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/cookies">Cookie Policy</a></li>
+                        <li><a href="/gdpr">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p style="margin-bottom: 15px;">Stay updated with our latest releases and news.</p>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 ParagBafna Apps. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
